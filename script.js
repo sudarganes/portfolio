@@ -15,6 +15,7 @@ if (navToggle && navLinks) {
 
 const sections = document.querySelectorAll("section[id]");
 const navAnchors = document.querySelectorAll(".nav-links a[href^='#']");
+const animatedEls = document.querySelectorAll("[data-animate]");
 
 function onScroll() {
   const scrollPos = window.scrollY;
@@ -43,4 +44,22 @@ function onScroll() {
 
 window.addEventListener("scroll", onScroll);
 onScroll();
+
+if (animatedEls.length) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+    }
+  );
+
+  animatedEls.forEach((el) => observer.observe(el));
+}
 

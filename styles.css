@@ -37,6 +37,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -86,14 +90,20 @@ img {
   gap: 0.75rem;
 }
 
-.avatar-placeholder {
+.avatar {
   width: 40px;
   height: 40px;
   border-radius: 999px;
-  background: radial-gradient(circle at 30% 20%, #facc15, #eab308);
-  border: 1px solid rgba(250, 204, 21, 0.7);
-  box-shadow: 0 0 0 1px rgba(253, 224, 71, 0.9),
-    0 10px 30px rgba(250, 204, 21, 0.55);
+  overflow: hidden;
+  border: 2px solid rgba(250, 204, 21, 0.9);
+  box-shadow: 0 0 0 1px rgba(253, 224, 71, 0.8),
+    0 12px 26px rgba(15, 23, 42, 0.18);
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .eyebrow {
@@ -434,6 +444,40 @@ main {
   font-size: 0.84rem;
 }
 
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+
+.gallery-frame {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(209, 213, 219, 0.9);
+  background: #f9fafb;
+  box-shadow: var(--shadow-subtle);
+}
+
+.gallery-frame img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.4s ease-out;
+}
+
+.gallery-frame:hover img {
+  transform: scale(1.04);
+}
+
 .principles {
   list-style: none;
   padding: 0;
@@ -510,13 +554,25 @@ main {
   gap: 0.75rem;
 }
 
+[data-animate] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (max-width: 960px) {
   .hero-grid {
     grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
   }
 
   .card-grid,
-  .case-grid {
+  .case-grid,
+  .gallery-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -571,7 +627,8 @@ main {
 
   .card-grid,
   .card-grid--two,
-  .case-grid {
+  .case-grid,
+  .gallery-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 

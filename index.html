@@ -17,10 +17,16 @@
     />
   </head>
   <body>
-    <header class="site-header">
+    <header class="site-header" data-animate="fade-down">
       <div class="shell">
         <div class="branding">
-          <div class="avatar-placeholder" aria-hidden="true"></div>
+          <div class="avatar">
+            <img
+              src="assets/headshot.jpg"
+              alt="Portrait of Sudar Ganes"
+              class="avatar-img"
+            />
+          </div>
           <div>
             <div class="eyebrow">Product Design Manager</div>
             <h1 class="site-title">Sudar Ganes</h1>
@@ -39,6 +45,7 @@
             <li><a href="#craft">Product Design</a></li>
             <li><a href="#leadership">Leadership</a></li>
             <li><a href="#work">Selected Work</a></li>
+            <li><a href="#gallery">Gallery</a></li>
             <li><a href="#process">Approach</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -47,7 +54,7 @@
     </header>
 
     <main>
-      <section id="hero" class="hero">
+      <section id="hero" class="hero" data-animate="fade-up">
         <div class="shell hero-grid">
           <div class="hero-copy">
             <p class="eyebrow">Product Design · UX Leadership</p>
@@ -97,7 +104,7 @@
         </div>
       </section>
 
-      <section id="about" class="section">
+      <section id="about" class="section" data-animate="fade-up">
         <div class="shell section-grid">
           <div>
             <h2>About</h2>
@@ -127,7 +134,7 @@
         </div>
       </section>
 
-      <section id="craft" class="section tinted">
+      <section id="craft" class="section tinted" data-animate="fade-up">
         <div class="shell">
           <div class="section-header">
             <h2>Product design craft</h2>
@@ -178,7 +185,7 @@
         </div>
       </section>
 
-      <section id="leadership" class="section">
+      <section id="leadership" class="section" data-animate="fade-up">
         <div class="shell">
           <div class="section-header">
             <h2>Design leadership</h2>
@@ -242,7 +249,7 @@
         </div>
       </section>
 
-      <section id="work" class="section tinted">
+      <section id="work" class="section tinted" data-animate="fade-up">
         <div class="shell">
           <div class="section-header">
             <h2>Selected work</h2>
@@ -305,7 +312,55 @@
         </div>
       </section>
 
-      <section id="process" class="section">
+      <section id="gallery" class="section" data-animate="fade-up">
+        <div class="shell">
+          <div class="section-header">
+            <h2>Gallery</h2>
+            <p>
+              A visual snapshot of some of my work. Replace these placeholders
+              with your own screenshots or photos.
+            </p>
+          </div>
+          <div class="gallery-grid">
+            <figure class="gallery-item">
+              <div class="gallery-frame">
+                <img
+                  src="assets/gallery-1.jpg"
+                  alt="Product interface mockup"
+                />
+              </div>
+              <figcaption>
+                Product workflow redesign improving task completion and clarity.
+              </figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <div class="gallery-frame">
+                <img
+                  src="assets/gallery-2.jpg"
+                  alt="Design system components"
+                />
+              </div>
+              <figcaption>
+                Design system components used across multiple product surfaces.
+              </figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <div class="gallery-frame">
+                <img
+                  src="assets/gallery-3.jpg"
+                  alt="Workshop or whiteboarding session"
+                />
+              </div>
+              <figcaption>
+                Facilitating a workshop to align stakeholders on product
+                direction.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="process" class="section" data-animate="fade-up">
         <div class="shell">
           <div class="section-header">
             <h2>How I work</h2>
@@ -351,7 +406,7 @@
         </div>
       </section>
 
-      <section id="contact" class="section tinted">
+      <section id="contact" class="section tinted" data-animate="fade-up">
         <div class="shell section-grid">
           <div>
             <h2>Contact</h2>
